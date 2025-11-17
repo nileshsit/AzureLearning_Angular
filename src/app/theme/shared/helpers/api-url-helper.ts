@@ -11,7 +11,7 @@ export class ApiUrlHelper {
       url: 'blob/url/{name}',
       upload: 'blob/upload',
       download: 'blob/download/{name}',
-      delete: 'blob',
+      delete: 'blob/{name}',
     }
   };
 }
