@@ -12,10 +12,16 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 // third party
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
+import { AuthInterceptor } from './interceptor/AuthInterceptor';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, CardComponent, NgbModule, NgScrollbarModule, NgbCollapseModule],
-  exports: [CommonModule, FormsModule, ReactiveFormsModule, CardComponent, NgbModule, NgScrollbarModule, NgbCollapseModule]
+  exports: [CommonModule, FormsModule, ReactiveFormsModule, CardComponent, NgbModule, NgScrollbarModule, NgbCollapseModule],
+  providers: [
+    provideHttpClient(),
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
 })
 export class SharedModule {}

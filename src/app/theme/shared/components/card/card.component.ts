@@ -4,8 +4,7 @@ import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular
 import { CommonModule } from '@angular/common';
 
 // bootstrap import
-import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownConfig,NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card',

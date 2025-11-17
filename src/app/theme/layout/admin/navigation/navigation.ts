@@ -16,6 +16,22 @@ export interface NavigationItem {
 }
 export const NavigationItems: NavigationItem[] = [
   {
+    id: 'pages',
+    title: 'Pages',
+    type: 'group',
+    icon: 'icon-pages',
+    children: [
+      {
+        id: 'blob-storage',
+        title: 'Blob Storage',
+        type: 'item',
+        url: '/blob-storage',
+        icon: 'feather icon-upload-cloud',
+        classes: 'nav-item'
+      }
+    ]
+  },
+  {
     id: 'navigation',
     title: 'Navigation',
     type: 'group',
