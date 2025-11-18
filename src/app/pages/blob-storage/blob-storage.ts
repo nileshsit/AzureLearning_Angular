@@ -24,10 +24,6 @@ export class BlobStorage {
 
   ngOnInit() { this.load(); }
 
-
-   // ---------------------------
-  // Load Blob List
-  // ---------------------------
   load() {
     this.spinner.show();
 
@@ -45,16 +41,10 @@ export class BlobStorage {
     });
   }
 
-  // ---------------------------
-  // File Selection
-  // ---------------------------
   onSelect(event: any) {
     this.selected = event.target.files[0];
   }
 
-  // ---------------------------
-  // Upload File
-  // ---------------------------
   upload() {
     if (!this.selected) return;
 
@@ -77,12 +67,9 @@ export class BlobStorage {
     });
   }
 
-  // ---------------------------
-  // Get SAS URL
-  // ---------------------------
   getUrl(name: string) {
     this.spinner.show();
-    const url = this.api.apiUrl.blob_storage.url.replace('{name}',name);
+    const url = this.api.apiUrl.blob_storage.url.replace('{name}',name).replace('{expiryMinutes}','10');
 
     this.commonService.doGet(url).subscribe({
       next: (res: any) => {
@@ -95,9 +82,6 @@ export class BlobStorage {
     });
   }
 
-  // ---------------------------
-  // Download File
-  // ---------------------------
   download(name: string) {
     const url = this.api.apiUrl.blob_storage.download.replace('{name}',name);
 
@@ -116,9 +100,6 @@ export class BlobStorage {
     });
   }
 
-  // ---------------------------
-  // Delete Blob
-  // ---------------------------
   delete(name: string) {
     const url = this.api.apiUrl.blob_storage.delete.replace('{name}',name);
     this.spinner.show();
