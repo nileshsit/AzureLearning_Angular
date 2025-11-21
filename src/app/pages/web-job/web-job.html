@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-12">
+      <app-card cardTitle="Azure Web Job Example">
+        <div class="container">
+  
+          <!-- Trigger Web Job API -->
+          <div class="trigger-area">
+            <button class="btn btn-primary mt-2" (click)="triggerWebJob()">Trigger Web Job</button>
+          </div>
+  
+          <hr>
+  
+          <!-- API Call Status -->
+          <div *ngIf="statusMessage" class="alert" [ngClass]="statusClass">
+            <strong>{{ statusMessage }}</strong>
+          </div>
+  
+        </div>
+      </app-card>
+    </div>
+  </div>
+  

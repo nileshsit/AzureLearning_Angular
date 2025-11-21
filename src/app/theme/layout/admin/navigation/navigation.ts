@@ -22,6 +22,14 @@ export const NavigationItems: NavigationItem[] = [
     icon: 'icon-pages',
     children: [
       {
+        id: 'web-job',
+        title: 'Web Job',
+        type: 'item',
+        url: '/web-job',
+        icon: 'feather icon-watch',
+        classes: 'nav-item'
+      },
+      {
         id: 'blob-storage',
         title: 'Blob Storage',
         type: 'item',

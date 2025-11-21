@@ -12,6 +12,9 @@ export class ApiUrlHelper {
       download: 'blob/download/{name}',
       delete: 'blob/{name}',
       url: 'blob/sas-url/{name}/{expiryMinutes}',
+    },
+    web_job: {
+      trigger_web_job: 'webJob/trigger'
     }
   };
 }

@@ -12,12 +12,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'blob-storage',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       },
       {
         path: 'blob-storage',
         loadComponent: () => import('./pages/blob-storage/blob-storage').then((c) => c.BlobStorage)
+      },
+      {
+        path: 'web-job',
+        loadComponent: () => import('./pages/web-job/web-job').then((c) => c.WebJob)
       },
       {
         path: 'dashboard',
