@@ -1,0 +1,41 @@
+.card-header-right {
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    position: absolute;
+    @media only screen and (max-width: 575px) {
+      display: none;
+    }
+
+    .dropdown-menu {
+      margin-top: 0;
+
+      li {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .btn.dropdown-toggle {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+      color: #888;
+
+      i {
+        margin-right: 0;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }

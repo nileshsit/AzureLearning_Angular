@@ -1,0 +1,40 @@
+.modal-header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .modal-header .close {
+    font-size: 1.5rem;  /* Adjust icon size */
+    color: #6c757d; /* Close button color */
+  }
+  
+  .modal-body {
+    padding: 1.5rem 2rem; /* Add padding for body */
+  }
+  
+  .otp-bar input {
+    width: 210px; /* Adjust OTP input width */
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .otp-bar {
+    gap: 0.5rem; /* Slightly reduced gap between inputs */
+  }
+  
+  .expire-info p {
+    font-size: 1rem;
+  }
+  
+  .disabled-link {
+    pointer-events: none;
+    color: #dcdcdc;
+  }
+  
+  .text-primary {
+    color: #5e72e4 !important; /* Ensure consistency with primary theme color */
+  }
+  
+  .text-center img {
+    max-width: 70px;  /* Ensure image is sized appropriately */
+  }
+  

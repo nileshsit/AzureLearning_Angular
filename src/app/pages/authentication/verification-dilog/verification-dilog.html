@@ -1,0 +1,58 @@
+<div class="modal-header px-3 py-2">
+  <h4 class="modal-title">Enter Two Factor Authentication Code</h4>
+  <!-- <a class="close" (click)="close()">
+    <i class="feather icon-x"></i>
+  </a> -->
+</div>
+
+<div class="modal-body px-3 py-4">
+  <div class="text-center">
+    <img src="../../../../assets/icon/verifcation-mail.svg" class="mb-4" alt="Verification Icon" style="max-width: 70px;" />
+    
+    <form [formGroup]="verificationForm" novalidate>
+      <div class="otp-bar d-flex align-items-center justify-content-center gap-3 mb-4">
+        <input
+          type="text"
+          formControlName="verificationCode"
+          (input)="onOtpChange($event)"
+          class="form-control form-control-lg text-center"
+          placeholder="Enter OTP"
+          maxlength="6"
+        />
+      </div>
+      
+      <p class="fs-6 mb-3">
+        The two factor authentication code has been successfully sent to your registered email: 
+        <span class="text-primary">{{ emailId }}</span>
+      </p>
+      
+      <button
+        type="button"
+        class="btn btn-primary w-75 mb-3"
+        (click)="verifyCode()"
+        [disabled]="submitted"
+      >
+        Verify
+      </button>
+      
+      <p class="fs-6">
+        It may take a minute to receive your code.<br />
+        Haven’t received it? 
+        <a 
+          class="text-primary cursor-pointer"
+          (click)="ResendOTP()"
+          [ngClass]="{'disabled-link': isResendDisabled}"
+        >
+          Resend a new code
+        </a>
+      </p>
+    </form>
+
+    <div class="expire-info">
+      <p *ngIf="counter > 0">
+        Expire in <span>{{ minutes }} : {{ seconds }}</span>
+      </p>
+      <p *ngIf="counter <= 0" class="text-danger">Time Expired</p>
+    </div>
+  </div>
+</div>
